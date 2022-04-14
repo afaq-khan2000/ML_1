@@ -74,7 +74,7 @@ $<!DOCTYPE html>
                
          
               <input class="form-control my-3" name="chol" id="chol" placeholder="Enter Cholestrol" onchange="checkSelection(this)" required>
-              <input class="form-control my-3" name="fbs" id="fbs" placeholder="Enter FBS" onchange="checkSelection(this)" required>
+              <input class="form-control my-3" name="fbs" id="fbs" placeholder="Enter FBS (0 or 1)" onchange="checkSelection(this)" required>
             
                     <button type="submit" class="btn btn-primary predict_button  ">Predict</button>
                     
@@ -82,15 +82,25 @@ $<!DOCTYPE html>
                 </div></form>
              </div>
            </div>
-          <br><br><br><br><br><br>
           
-          <p class="h5 ftco-subheading mb-5">
-          <br><strong>PClass - Passenger Class : <i style="color: red;">{{ age1 }}</i></strong>
-          <br><strong>Gender &ensp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;: <i style="color: red;">{{ trestbps1 }}</i></strong>
-          <br><strong>Siblings &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;: <i style="color: red;">{{ chol1 }}</i></strong>
-          <br><strong>Embarked &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;: <i style="color: red;">{{ fbs1 }}</i></strong>
-          
-          <br><br><strong>Output &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;: <i style="color: red;">{{ prediction_text1 }}</i></strong>
+          <div class="row">
+            <div class="col-md-6">
+              <h5>Age</h5>
+              <h5>trestbps</h5>
+              <h5>Cholestrol</h5>
+              <h5>FBS</h5>
+              <h5>Output</h5>
+            </div>
+            <div class="col-md-6">
+              <h5> {{ age1 }}</h5>
+              <h5>
+                {{ trestbps1 }}</h5>
+              <h5>{{ chol1 }}</h5>
+              <h5>{{ fbs1 }}</h5>
+              <h5>{{ prediction_text1 }}</h5>
+            </div>
+          </div>
+          <p>
          
     </div>
     </div>

@@ -38,9 +38,9 @@ def predict():
     #unseen_feature_vectors = request.form.values()
    
    if prediction[0] == 1:
-        categorical_array = "No Heart Disease Diagnosed"
-   if prediction[0] == 0:
         categorical_array = "Heart Disease Diagnosed"
+   if prediction[0] == 0:
+        categorical_array = "No Heart Disease Diagnosed"
     
    result= categorical_array
        
