@@ -20,15 +20,15 @@ def predict():
    
    
    inputs = []
-   inputs.append(request.form['age'])
-   inputs.append(request.form['trestbps'])    
-   inputs.append(request.form['chol'])
-   inputs.append(request.form['fbs'])
+   inputs.append(request.form['pclass'])
+   inputs.append(request.form['gender'])    
+   inputs.append(request.form['siblings'])
+   inputs.append(request.form['embarked'])
    
-   age = request.form['age']
-   trestbps = request.form['trestbps'] 
-   chol = request.form['chol']
-   fbs = request.form['fbs']
+   class1 = request.form['pclass']
+   gender = request.form['gender'] 
+   siblings = request.form['siblings']
+   embarked = request.form['embarked']
    
 
    
@@ -38,13 +38,38 @@ def predict():
     #unseen_feature_vectors = request.form.values()
    
    if prediction[0] == 1:
-        categorical_array = "No Heart Disease Diagnosed"
+        categorical_array = "Survived"
    if prediction[0] == 0:
-        categorical_array = "Heart Disease Diagnosed"
+        categorical_array = "Not Survived"
     
    result= categorical_array
+   if class1=="1":
+       class1 = "First Class"
+   if class1=="2":
+       class1 = "Second Class"
+   if class1=="3":
+       class1 = "Third Class"
        
-   return render_template('Home.html', prediction_text1=result, age1 = age, trestbps1=trestbps, chol1=chol, fbs1=fbs)
+   if gender=="0":
+       gender = "Female"
+   if gender=="1":
+       gender = "Male"
+     
+   if siblings=="1":
+       siblings = "One"
+   if siblings=="2":
+       siblings = "Two"
+   if siblings=="3":
+       siblings = "Three"
+       
+   if embarked=="0":
+       embarked = "Cherbourg"
+   if embarked=="1":
+       embarked = "Queenstown"
+   if embarked=="2":
+       embarked = "Southampton"
+       
+   return render_template('Home.html', prediction_text1=result, class11 = class1, gender1=gender, siblings1=siblings, embarked1=embarked)
 
 
 
